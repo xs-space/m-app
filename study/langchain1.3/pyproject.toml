@@ -13,14 +13,8 @@ dependencies = [
     "langchain-community>=0.4.2",
     "langchain-openai>=1.4.1",
     "langgraph>=1.2.10",
+    "python-dotenv>=1.2.2",
 ]
-
-[project.scripts]
-langchain1-3 = "langchain1_3:main"
-
-[build-system]
-requires = ["uv_build>=0.12.2,<0.13.0"]
-build-backend = "uv_build"
 
 [[tool.uv.index]]
 url = "https://mirrors.aliyun.com/pypi/simple/"

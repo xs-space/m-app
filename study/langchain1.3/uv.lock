@@ -813,13 +813,14 @@ wheels = [
 [[package]]
 name = "langchain1-3"
 version = "0.1.0"
-source = { editable = "." }
+source = { virtual = "." }
 dependencies = [
     { name = "dashscope" },
     { name = "langchain" },
     { name = "langchain-community" },
     { name = "langchain-openai" },
     { name = "langgraph" },
+    { name = "python-dotenv" },
 ]
 
 [package.metadata]
@@ -829,6 +830,7 @@ requires-dist = [
     { name = "langchain-community", specifier = ">=0.4.2" },
     { name = "langchain-openai", specifier = ">=1.4.1" },
     { name = "langgraph", specifier = ">=1.2.10" },
+    { name = "python-dotenv", specifier = ">=1.2.2" },
 ]
 
 [[package]]
