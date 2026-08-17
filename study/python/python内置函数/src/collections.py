@@ -31,7 +31,15 @@ collections
                     字段可以通过名称访问，也可以通过索引访问
                     内存效率高，比普通类占用更少的内存
                     不可变，线程安全
-            deque：双端队列，支持高效的两端插入和删除操作
+            deque：是一个双端队列，支持高效的两端高效地添加和删除元素。它的性能优于列表在两端的操作
+                核心方法：
+                    append(x)：在右侧添加元素
+                    appendleft(x)：在左侧添加元素
+                    pop()：从右侧弹出元素
+                    popleft()：从左侧弹出元素
+                    extend(iterable)：在右侧批量添加元素
+                    extendleft(iterable)：在左侧批量添加元素（注意顺序会被反转）
+                    rotate(n=1)：旋转队列 n 步，正数向右，负数向左
         抽象基类：
             Iterable：可迭代对象的抽象基类
             Sequence：序列的抽象基类
@@ -138,3 +146,61 @@ bob = Person("Bob", 25, "Male")
 bob = bob._replace(age=26)  # Bob 过生日了，年龄增加
 print("Alice:", alice)
 print("Bob:", bob)
+print("*" * 50, " deque ", "*" * 50)
+
+### deque
+from collections import deque
+
+# 1.基本使用
+dq = deque([1, 2, 3])
+dq.append(4)  # 在右侧添加元素
+dq.appendleft(0)  # 在左侧添加元素
+print("双端队列：", dq)
+print("从右侧弹出元素：", dq.pop())
+print("从左侧弹出元素：", dq.popleft())
+print("弹出元素后：", dq)
+# 2.限制长度（用于实现固定大小的缓冲区）
+buffer = deque(maxlen=3)
+for i in range(5):
+    buffer.append(i)
+    print("缓冲区状态：", buffer)
+# 3.旋转
+dq = deque([1, 2, 3, 4, 5])
+dq.rotate(2)  # 向右旋转 2 步
+print("向右旋转后：", dq)
+dq.rotate(-3)  # 向左旋转 3 步
+print("向左旋转后：", dq)
+
+print("*" * 50, " 案例一：词频统计与分析 ", "*" * 50)
+### 案例一：词频统计与分析
+# 需求：统计一段文本中每个单词的出现次数，并找出出现次数最多的前 10 个单词
+import re
+from collections import Counter
+
+
+def word_frequency_analysis(text, top_n=10):
+    """统计文本中单词的出现次数，并返回出现次数最多的前 top_n 个单词"""
+    # 转换为小写并提取单词
+    words = re.findall(r"\b\w+\b", text.lower())
+    # 统计词频
+    word_counts = Counter(words)
+    # 获取出现次数最多的前 10 个单词
+    return word_counts.most_common(top_n)
+
+
+sample_text = """Python is a high-level, interpreted, general-purpose programming language. Python's design philosophy 
+emphasizes code readability with its notable use of significant indentation. Python is dynamically-typed and 
+garbage-collected. It supports multiple programming paradigms, including structured, object-oriented and functional 
+programming."""
+print("出现次数最多的前 10 个单词：")
+print(word_frequency_analysis(sample_text))
+
+
+print("*" * 50, " 案例二：日志统计与分析 ", "*" * 50)
+### 案例二：日志统计与分析
+# 需求：分析一个 Web 服务器日志文件，统计每个客户端 Ip 的访问次数和请求的 URL 类型
+from collections import Counter, defaultdict
+
+
+def analyze_web_logs(log_lines):
+    """分析 Web 服务器日志"""
