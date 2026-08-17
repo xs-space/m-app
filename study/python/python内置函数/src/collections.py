@@ -50,7 +50,7 @@ from collections import Counter
 
 # 1.基本计数
 text = "hello world"
-char_count= Counter(text)
+char_count = Counter(text)
 print("基本计数：", char_count)
 # 2.统计列表元素
 numbers = ["apple", "banana", "banana", "orange", "orange", "orange"]
@@ -88,9 +88,9 @@ for char in text:
 print("计数结果：", dict(counts))
 # 3.嵌套字典（使用 dict 作为默认值）
 nested = defaultdict(dict)
-nested['user1']['name'] = "Alice"
-nested['user1']['age'] = 30
-nested['user2']['name'] = "Bob"
+nested["user1"]["name"] = "Alice"
+nested["user1"]["age"] = 30
+nested["user2"]["name"] = "Bob"
 print("嵌套字典结果：", dict(nested))
 print("*" * 50, " OrderedDict ", "*" * 50)
 
@@ -99,12 +99,12 @@ from collections import OrderedDict
 
 # 1.基本使用
 ordered = OrderedDict()
-ordered['a'] = 1
-ordered['b'] = 2
-ordered['c'] = 3
+ordered["a"] = 1
+ordered["b"] = 2
+ordered["c"] = 3
 print("有序字典：", dict(ordered))
 # 2.移动元素
-ordered.move_to_end('b')
+ordered.move_to_end("b")
 print("移动元素后：", dict(ordered))
 # 3.弹出元素
 print("弹出元素：", ordered.popitem())
@@ -116,7 +116,7 @@ print("*" * 50, " namedtuple ", "*" * 50)
 from collections import namedtuple
 
 # 1.定义和使用
-UserInfo = namedtuple('UserInfo', ['username', 'password'])
+UserInfo = namedtuple("UserInfo", ["username", "password"])
 p = UserInfo("root", "123456")
 print("命名元组：", p)
 print("用户名：", p.username)
@@ -132,7 +132,7 @@ print("从序列创建：", p3)
 p4 = UserInfo(**{"username": "guest", "password": "guest123"})
 print("从字典创建：", p4)
 # 5.应用场景：表示不可变数据对象
-Person = namedtuple('Person', 'name age gender')
+Person = namedtuple("Person", "name age gender")
 alice = Person("Alice", 30, "Female")
 bob = Person("Bob", 25, "Male")
 bob = bob._replace(age=26)  # Bob 过生日了，年龄增加
