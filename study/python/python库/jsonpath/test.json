@@ -1,0 +1,67 @@
+{
+    "code": 0,
+    "message": "ok",
+    "result": [
+        {
+            "productId": 1210983809,
+            "productType": 0,
+            "productName": "Python接口自动化+测试开发",
+            "imageUrl": "https://edu-image.nosdn.127.net/1dba1a39b25e417caeacef7effbfe650.png?imageView&quality=100&crop=20_140_835_492",
+            "lessonName": "第5课 Python基础 Dict字典相关操作与jsonpath取值",
+            "lastLearnedTime": 1750665256471,
+            "refResId": 1285000160,
+            "lessonType": 2,
+            "yoocCourseDto": null,
+            "s2LearnRecordDto": null
+        },
+        {
+            "productId": 1210886815,
+            "productType": 0,
+            "productName": "Selenium+Pytest Web自动化实战",
+            "imageUrl": "https://edu-image.nosdn.127.net/6c59427ac1d84a83b023207e2b787281.png?imageView&quality=100&crop=1_7_772_445",
+            "lessonName": null,
+            "lastLearnedTime": 1747192834049,
+            "refResId": null,
+            "lessonType": null,
+            "yoocCourseDto": null,
+            "s2LearnRecordDto": null
+        },
+        {
+            "productId": 1211387804,
+            "productType": 0,
+            "productName": "Python3 基础练习题精选",
+            "imageUrl": "https://edu-image.nosdn.127.net/128713d7958e4db8842d99b8d49919d9.png?imageView&quality=100&crop=41_31_809_439",
+            "lessonName": null,
+            "lastLearnedTime": 1734415241150,
+            "refResId": null,
+            "lessonType": 3,
+            "yoocCourseDto": null,
+            "s2LearnRecordDto": null
+        },
+        {
+            "productId": 1213382811,
+            "productType": 0,
+            "productName": "Playwright+Python自动化测试",
+            "imageUrl": "https://study-image.nosdn.127.net/756e67878ec6413ca05c094fbc705550.png?imageView&quality=100&crop=0_0_474_266",
+            "lessonName": null,
+            "lastLearnedTime": 1733129931819,
+            "refResId": null,
+            "lessonType": null,
+            "yoocCourseDto": null,
+            "s2LearnRecordDto": null
+        },
+        {
+            "productId": 1209560807,
+            "productType": 0,
+            "productName": "postman接口测试实战教程",
+            "imageUrl": "https://edu-image.nosdn.127.net/949480f3bb5f4846837bab9bf1aa12e6.png?imageView&quality=100&crop=0_0_1146_715",
+            "lessonName": null,
+            "lastLearnedTime": 1733129255114,
+            "refResId": null,
+            "lessonType": 2,
+            "yoocCourseDto": null,
+            "s2LearnRecordDto": null
+        }
+    ],
+    "uuid": null
+}
