@@ -15,7 +15,7 @@ if __name__ == "__main__":
         session_id="axxxx",
         name="test",
         system_prompt="你是一个本地用户助手，可以帮助用户处理本地工作。",
-        llm=DeepSeek(model="qwen3.5:9b"),
+        llm=DeepSeek(model="qwen3.8:27b"),
         tools=[WeatherTool(), FileTool(work_dir=Path.cwd() / "work_dir"), TodoTool()],
         memory=Memory(),
     )
