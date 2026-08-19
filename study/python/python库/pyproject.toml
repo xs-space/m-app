@@ -9,6 +9,7 @@ authors = [
 requires-python = ">=3.12"
 dependencies = [
     "jsonpath>=0.82.2",
+    "opencv-python>=5.0.0.93",
     "watchdog>=6.0.0",
 ]
 
