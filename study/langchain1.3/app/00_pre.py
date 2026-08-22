@@ -1,14 +1,13 @@
 import os
 
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 from langchain.chat_models import init_chat_model
 
-
 llm = init_chat_model(
-    model=os.getenv("LOCAL_MODEL"),
-    openai_api_key=os.getenv("LOCAL_API_KEY"),
-    openai_api_base=os.getenv("LOCAL_BASE_URL"),
+    model=os.getenv("MODEL"),
+    openai_api_key=os.getenv("API_KEY"),
+    openai_api_base=os.getenv("BASE_URL"),
     model_provider="openai",
     temperature=0,
     max_retries=3,
