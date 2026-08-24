@@ -7,6 +7,7 @@ from collections.abc import Callable
 
 from deepagents import create_deep_agent
 from deepagents.backends import FilesystemBackend
+from deepagents.middleware.skills import SkillsMiddleware
 from langchain.agents.middleware import before_model, after_model, wrap_tool_call, AgentState
 from langchain.chat_models import init_chat_model
 from langchain.messages import AIMessage, ToolMessage
@@ -49,7 +50,7 @@ llm_params = {
     "model_provider": "openai",
     "temperature": 0,
     "max_retries": 3,
-    "streaming": False,
+    "streaming": True,
 }
 
 
@@ -57,14 +58,17 @@ logger.info(settings.virtual_path)
 logger.info(llm_params)
 
 backend = FilesystemBackend(root_dir=settings.virtual_path, virtual_mode=True)
+skill_backend = FilesystemBackend(root_dir=r"E:\workspace\pro\demo01\study\deep_agents", virtual_mode=True)
 
 llm = init_chat_model(**llm_params)
+
+skill_middleware = SkillsMiddleware(backend=skill_backend, sources=["/skills"])
 
 agent = create_deep_agent(
     model=llm,
     system_prompt="你是一个助人为乐的中文AI",
-    backend=backend,
+    backend=skill_backend,
     tools=[],
-    middleware=[log_tool_calls, check_message_limit, log_response],
+    middleware=[log_tool_calls, check_message_limit, log_response, skill_middleware],
     debug=False,
 )
