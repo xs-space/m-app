@@ -69,6 +69,6 @@ agent = create_deep_agent(
     system_prompt="你是一个助人为乐的中文AI",
     backend=skill_backend,
     tools=[],
-    middleware=[log_tool_calls, check_message_limit, log_response, skill_middleware],
+    middleware=[skill_middleware, log_tool_calls, check_message_limit, log_response],
     debug=False,
 )
