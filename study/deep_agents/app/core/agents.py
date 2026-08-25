@@ -43,8 +43,8 @@ def log_response(state: AgentState, runtime: Runtime) -> dict[str, Any] | None:
 
 
 llm_params = {
-    "model": "qwen3.6:35b",
-    # "model": settings.model,
+    # "model": "qwen3.6:35b",
+    "model": settings.model,
     "openai_api_key": settings.api_key,
     "openai_api_base": settings.base_url,
     "model_provider": "openai",
@@ -57,7 +57,7 @@ llm_params = {
 logger.info(settings.virtual_path)
 logger.info(llm_params)
 
-backend = FilesystemBackend(root_dir=settings.virtual_path, virtual_mode=True)
+# backend = FilesystemBackend(root_dir=settings.virtual_path, virtual_mode=True)
 skill_backend = FilesystemBackend(root_dir=r"E:\workspace\pro\demo01\study\deep_agents", virtual_mode=True)
 
 llm = init_chat_model(**llm_params)

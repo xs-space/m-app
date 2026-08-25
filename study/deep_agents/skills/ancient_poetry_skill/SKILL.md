@@ -1,3 +1,8 @@
+---
+name: ancient_poetry_skill
+description: 古诗词创作与赏析技能，可以创作古诗、赏析名句、解释诗意
+---
+
 # Skill: 古诗创作
 
 ### 触发条件
